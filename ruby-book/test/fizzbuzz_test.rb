@@ -1,16 +1,23 @@
 # frozen_string_literal: true
 
-require 'minitest/autorun'
+require 'test/unit'
 require './lib/fizzbuzz.rb'
 
-class FizzBuzzTest < Minitest::Test
+class TestSample < Test::Unit::TestCase
   def test_fizzbuzz
-    assert_equal '1', fizzbuzz(1)
-    assert_equal '2', fizzbuzz(2)
-    assert_equal 'Fizz', fizzbuzz(3)
-    assert_equal '4', fizzbuzz(4)
-    assert_equal 'Buzz', fizzbuzz(5)
-    assert_equal 'Fizz', fizzbuzz(6)
-    assert_equal 'FizzBuzz', fizzbuzz(15)
+    assert { fizzbuzz(1) == '1' }
+    assert { fizzbuzz(2) == '2' }
+    assert { fizzbuzz(3) == 'Fizz' }
+    assert { fizzbuzz(4) == '4' }
+    assert { fizzbuzz(5) == 'Buzz' }
+    assert { fizzbuzz(6) == 'Fizz' }
+    assert { fizzbuzz(15) == 'FizzBuzz' }
   end
 end
+
+# require 'minitest/autorun'
+# class FizzBuzzTest < Minitest::Test
+#   def test_fizzbuzz
+#     assert_equal '1', fizzbuzz(1)
+#   end
+# end
