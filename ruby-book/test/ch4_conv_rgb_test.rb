@@ -9,4 +9,10 @@ class TestSample < Test::Unit::TestCase
     assert { to_hex(255, 255, 255) == '#ffffff' }
     assert { to_hex(240, 248, 255) == '#f0f8ff' }
   end
+
+  def test_to_ints
+    assert { to_ints('#000000') == [0, 0, 0] }
+    assert { to_ints('#ffffff') == [255, 255, 255] }
+    assert { to_ints('#f0f8ff') == [240, 248, 255] }
+  end
 end
